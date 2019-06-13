@@ -5,7 +5,7 @@ const fs = require("fs")
 const users = require("./users")
 const lookPretty = require("js-beautify")
 
-const port = 8080
+const port = process.env.PORT || 8080
 
 app.set("view engine", "ejs")
 
