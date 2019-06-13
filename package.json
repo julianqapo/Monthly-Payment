@@ -2,7 +2,7 @@
   "name": "mpe",
   "version": "1.0.0",
   "description": "Manages Monthly Internet Payment",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "start": "app.js"
   },
