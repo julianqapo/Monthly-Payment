@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>users database</title>
+</head>
+
+<body>
+
+   <a href="/<%= url %>/adduser">Add User</a>
+    <input type="text">
+    <% console.log(url) %>
+   <table>
+       <tr>
+            <th>name</th>
+            <th>number</th>
+            <th>username</th>
+            <th>type</th>
+            <th>jan</th>
+            <th>feb</th>
+            <th>march</th>
+            <th>april</th>
+            <th>may</th>
+            <th>june</th>
+            <th>july</th>
+            <th>augest</th>
+            <th>sep</th>
+            <th>oct</th>
+            <th>nov</th>
+            <th>dec</th>
+       </tr>
+       
+       <% for (let i=0; i<users.length; i++) { %>
+        <tr id="<%= users[i]["name"]%>">
+            <td><%= users[i]["name"]%></td>
+            <td><%= users[i]["number"]%></td>
+            <td><%= users[i]["username"]%></td>
+            <td><%= users[i]["type"]%></td>
+            <th class="jan"><%= users[i]["jan"]%></th>
+             <th class="feb"><%= users[i]["feb"]%></th>
+             <th class="march"><%= users[i]["march"]%></th>
+             <th class="april"><%= users[i]["april"]%></th>
+             <th class="may"><%= users[i]["may"]%></th>
+             <th class="june"><%= users[i]["june"]%></th>
+             <th class="july"><%= users[i]["july"]%></th>
+             <th class="augest"><%= users[i]["augest"]%></th>
+             <th class="sep"><%= users[i]["sep"]%></th>
+             <th class="oct"><%= users[i]["oct"]%></th>
+             <th class="nov"><%= users[i]["nov"]%></th>
+             <th class="dec"><%= users[i]["dec"]%></th>
+
+        </tr>
+        <% }%>
+
+       
+       
+    
+        
+
+
+   </table>
+
+</body>
+<script>
+   // const users = require("../users")
+    
+    let table = document.querySelector("table")
+table.addEventListener("click", e=> {
+    let x;
+    if (e.target.parentNode.hasAttribute){
+        let user = e.target.parentNode.getAttribute("id")
+        let month = e.target.getAttribute("class")
+         x = prompt(`${user}, for the month ${month}:`)
+    console.log(x)
+    e.target.innerHTML = x
+    }
+
+    
+    
+})
+</script>
+
+</html>
