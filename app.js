@@ -65,14 +65,21 @@ app.post("/:id/adduser", (req,res)=>{
         feb : "",
         march : "",
         april:"",
-        may : ""
+        may : "",
+        jun: "",
+        July : "",
+        augest :"",
+        sep : "",
+        oct : "",
+        nov : "",
+        dec : ""
         }
         let year = req.params.id.trim()
         users[year].push(user)
         let finalusers = JSON.stringify(users)
         res.render("addedsuc", {user : user,
                                 url : req.params.id.trim()})
-        fs.writeFileSync("users.json", finalusers)
+        fs.writeFileSync("users.json", lookPretty(finalusers))
     })
     //to here
     /*
